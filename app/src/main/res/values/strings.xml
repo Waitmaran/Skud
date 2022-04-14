@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SCUD</string>
+    <string name="servicedesc">NFC card emulation service</string>
+    <string name="aiddescription">nfc aid</string>
+</resources>
