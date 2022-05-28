@@ -2,4 +2,7 @@
     <string name="app_name">SCUD</string>
     <string name="servicedesc">NFC card emulation service</string>
     <string name="aiddescription">nfc aid</string>
+    <string name="element_text">авдао</string>
+    <string name="classroom_name">Аудитория:</string>
+    <string name="classroom_type">Тип:</string>
 </resources>

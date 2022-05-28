@@ -1,10 +1,10 @@
 package com.colin.skud
 
-import android.content.Intent
 import android.nfc.NfcAdapter
 import android.os.Bundle
-import android.util.Log
+import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.colin.skud.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -18,11 +18,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-    binding.buttonSendData.setOnClickListener {
-        val intent = Intent(this, NfcCardEmulation::class.java)
-        startService(intent)
-        Log.d("USER", "BUTTON CLICKED")
-    }
+        binding.recyclerView.layoutManager = LinearLayoutManager(this)
+        binding.recyclerView.adapter = ClassRoomRecyclerAdapter(fillList())
 }
+
+    private fun fillList(): List<ClassInfo> {
+        val data = mutableListOf<ClassInfo>()
+        data.add(0, ClassInfo("420", "лекционная"))
+        data.add(0, ClassInfo("428", "лабаратория"))
+        data.add(0, ClassInfo("439", "кафедра"))
+        return data
+    }
 }
